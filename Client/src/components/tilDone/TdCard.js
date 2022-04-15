@@ -15,13 +15,14 @@ const CardContainer = styled.div`
 
 
 
-const TdCard = () => {
+const TdCard = (props) => {
+    const {title} = props
     return (
 
         <CardContainer>
             <Card>
                 <CardContent>
-                    <Typography>TEST</Typography>
+                    <Typography>{title}</Typography>
                 </CardContent>
             </Card>
         </CardContainer>

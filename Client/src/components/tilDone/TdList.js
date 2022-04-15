@@ -2,6 +2,7 @@ import React from 'react'
 import TdCard from "./TdCard";
 import styled from "styled-components";
 
+
 const ListContainer = styled.div`
   background-color: #dfe3e6;
   border-radius: 3px;
@@ -28,17 +29,19 @@ const ListTitle = styled.h4`
 `;
 
 
-const TdList = () => {
+const TdList = (props) => {
+    const {title, cards} = props
   return (
     <ListContainer>
          <TitleContainer>
-            <ListTitle>TEST</ListTitle>
+            <ListTitle>{title}</ListTitle>
          </TitleContainer>
          
-          <TdCard />
+          {cards.map(card => <TdCard title={card.title} />)}
     </ListContainer>
   )
 }
+
 
 export default TdList
 
